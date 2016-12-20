@@ -34,7 +34,7 @@ void target_unl(Module* module);
 void target_vim(Module* module);
 void target_ws(Module* module);
 void target_x86(Module* module);
-
+void target_rill(Module* module);
 typedef void (*target_func_t)(Module*);
 
 static target_func_t get_target_func(const char* ext) {
@@ -59,6 +59,7 @@ static target_func_t get_target_func(const char* ext) {
   if (!strcmp(ext, "pl")) return target_pl;
   if (!strcmp(ext, "py")) return target_py;
   if (!strcmp(ext, "rb")) return target_rb;
+  if (!strcmp(ext, "rill")) return target_rill;
   if (!strcmp(ext, "sed")) return target_sed;
   if (!strcmp(ext, "sh")) return target_sh;
   if (!strcmp(ext, "sqlite3")) return target_sqlite3;

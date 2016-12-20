@@ -85,6 +85,7 @@ ELC_SRCS := \
 	pl.c \
 	py.c \
 	rb.c \
+	rill.c \
 	sed.c \
 	sh.c \
 	sqlite3.c \
@@ -373,6 +374,11 @@ TARGET := sqlite3
 RUNNER := tools/runsqlite3.sh
 TOOL := sqlite3
 include target.mk
+
+TARGET := rill
+RUNNER := tools/runrill.sh
+include target.mk
+$(OUT.eir.rill.out): tools/runrill.sh
 
 test: $(TEST_RESULTS)
 
